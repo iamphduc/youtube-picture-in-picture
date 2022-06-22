@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/styles/popup.css" />
+
+    <title>Youtube Picture-in-Picture</title>
+  </head>
+  <body>
+    <div class="pip">
+      <header>
+        <img class="logo" src="/assets/icon.png" alt="Logo" />
+        <h1 class="title">YPiP</h1>
+      </header>
+
+      <main>
+        <section class="preview">
+          <h2 class="section__title">
+            Preview: (<span class="preview__index">0</span>/<span class="preview__total">0</span>)
+          </h2>
+          <p class="preview__youtube-title">No Youtube tab found</p>
+          <iframe class="preview__youtube-iframe" frameborder="0" loading="lazy"></iframe>
+          <button class="btn preview__toggle" type="button">Picture-in-Picture</button>
+          <div class="preview__actions">
+            <button class="btn preview__action-prev" type="button">< Prev</button>
+            <button class="btn preview__action-next" type="button">Next ></button>
+          </div>
+        </section>
+
+        <section class="favorites">
+          <h2 class="section__title">Favorites: (<span class="favorites__count">0</span>/3)</h2>
+          <div class="favorites__actions">
+            <button class="btn favorites__save" type="button">Save</button>
+            <em class="favorites__save-warning hidden">Please open a Youtube video first!</em>
+          </div>
+          <table class="favorites__table">
+            <tbody>
+              <tr id="sample-favorites__table-row" class="favorites__table-row">
+                <td class="favorites__url">
+                  <input class="favorites__input" type="text" readonly />
+                </td>
+                <td>
+                  <button class="btn favorites__remove" type="button">X</button>
+                </td>
+                <td>
+                  <button class="btn favorites__open" type="button">Open</button>
+                </td>
+              </tr>
+              <template id="template-favorites__table-row">
+                <tr class="favorites__table-row">
+                  <td class="favorites__url">
+                    <input class="favorites__input" type="text" readonly value="" />
+                  </td>
+                  <td>
+                    <button class="btn favorites__remove" type="button">X</button>
+                  </td>
+                  <td>
+                    <button class="btn favorites__open" type="button">Open</button>
+                  </td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script src="/scripts/popup.js"></script>
+  </body>
+</html>
